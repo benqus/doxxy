@@ -1,0 +1,19 @@
+{
+  "name": "doxxy",
+  "version": "0.1.0",
+  "description": "DOM event proxy",
+  "author": {
+    "name": "Bence Kormos",
+    "email": "kormos.bence@gmail.com",
+    "url": "https://github.com/benqus"
+  },
+  "main": "./dist/doxxy.js",
+  "scripts": {
+    "dev": "./node_modules/.bin/parcel serve ./index.html -d ./build/",
+    "build": "./node_modules/.bin/parcel build lib/doxxy.js -d ./dist/"
+  },
+  "devDependencies": {
+    "parcel": "^1.12.4"
+  },
+  "license": "MIT"
+}

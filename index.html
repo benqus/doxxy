@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Doxxy</title>
+    </head>
+    <body>
+        <div data-event:click="allClicks">
+            <header>
+                <h2>Text</h2>
+            </header>
+            <form data-event:submit="form.submit" style="width: 50%;">
+                <fieldset>
+                    <input type="text" name="name" placeholder="Your name...">
+                </fieldset>
+                <fieldset>
+                    <input type="submit">
+                </fieldset>
+                <div data-event:drop="drag.drop" data-event:dragover="drag.over" style="min-width: 20px; min-height: 20px; background: blue;"></div>
+            </form>
+            <div data-event:dragstart="drag.start" draggable="true" style="width: 100px; height: 100px; background: green;"></div>
+        </div>
+    </body>
+    <script src="example/index.js"></script>
+</html>
