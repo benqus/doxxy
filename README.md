@@ -10,10 +10,12 @@ Doxxy is a minimalistic tool that allows the markup to change without the event 
 This allows more flexibility between user-actions and page rerenders/reflows regardless whether the markup is rendered on the server or the client side.
 
 Consider this basic example:
-```
+```html
 // html - View
 <button onclick="onclick">Click me!</button>
+```
 
+```js
 //js - Controller
 function onclick() {
     alert('Hello world!')
@@ -24,13 +26,16 @@ In this case the `onclick` handler is created on and referenced from the global 
 With Doxxy, the event listeners are soft-referenced and live in their scope of declaration.
 
 Adding listeners with Doxxy:
-```
-// html
+```html
 <button data-event:click="click">Click me!</button>
+```
+Script
 
-//js
+```js
 doxy.subscribe('click', e => alert('Hello world!'));
 ```
+
+This way multiple UI control elements can be channelled through the sma event listener.
 
 Doxxy does not conflict with existing frameworks as it is using `data-event:[type]` attribute and does not rely on other dependencies or frameworks.
 
