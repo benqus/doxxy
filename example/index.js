@@ -1,8 +1,8 @@
 import doxxy from '../lib/doxxy';
 
-doxxy.subscribe('allClicks', (e) => console.log(e.type));
+doxxy.action('allClicks', (e) => console.log(e.type));
 
-doxxy.subscribe('drag', {
+doxxy.action('drag', {
 
     start(e) {
         e.dataTransfer.setData('text/plain', 'hakuna matata');
@@ -19,7 +19,7 @@ doxxy.subscribe('drag', {
 
 });
 
-doxxy.subscribe('form', {
+doxxy.action('form', {
 
     submit(e) {
         e.preventDefault();

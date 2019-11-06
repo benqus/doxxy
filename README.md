@@ -32,7 +32,7 @@ Adding listeners with Doxxy:
 Script
 
 ```js
-doxy.subscribe('click', e => alert('Hello world!'));
+doxy.action('click', e => alert('Hello world!'));
 ```
 
 This way multiple UI control elements can be channelled through the sma event listener.
@@ -56,5 +56,5 @@ Script
 ```js
 import doxy from 'doxy';
 
-doxy.subscribe('click', e => alert(e.target.value));
+doxy.action('click', e => alert(e.target.value));
 ```
