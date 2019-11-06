@@ -1,8 +1,10 @@
-import doxxy from '../lib/doxxy';
+import doxxy from '../lib/index';
 
-doxxy.action('allClicks', (e) => console.log(e.type));
+const dx = doxxy();
 
-doxxy.action('drag', {
+dx.action('allClicks', (e) => console.log(e.type));
+
+dx.action('drag', {
 
     start(e) {
         e.dataTransfer.setData('text/plain', 'hakuna matata');
@@ -19,7 +21,7 @@ doxxy.action('drag', {
 
 });
 
-doxxy.action('form', {
+dx.action('form', {
 
     submit(e) {
         e.preventDefault();
@@ -27,3 +29,17 @@ doxxy.action('form', {
     }
 
 });
+
+// Nosleep.js test
+const node = document.getElementById('video');
+const events = [ 'timeupdate' ];
+const cx = doxxy({ node, events });
+
+cx.action('jumpToRandomTime', (e) => {
+    if (e.target.currentTime > 0.5) {
+        console.log(e.target.currentTime);
+        e.target.currentTime = Math.random();
+    }
+});
+
+node.play();

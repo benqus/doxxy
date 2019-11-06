@@ -1,16 +1,16 @@
 {
   "name": "doxxy",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "DOM event proxy",
   "author": {
     "name": "Bence Kormos",
     "email": "kormos.bence@gmail.com",
     "url": "https://github.com/benqus"
   },
-  "main": "./dist/doxxy.js",
+  "main": "./dist/index.js",
   "scripts": {
     "dev": "./node_modules/.bin/parcel serve ./index.html -d ./build/",
-    "build": "./node_modules/.bin/parcel build ./lib/doxxy.js -d ./dist/"
+    "build": "./node_modules/.bin/parcel build ./lib/index.js -d ./dist/"
   },
   "repository": {
     "type": "git",

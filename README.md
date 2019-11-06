@@ -5,7 +5,7 @@ DOM Event Proxy - channel all bubbling events via a proxy listener to controller
 
 > **Note:** Work In Progress - feel free to suggest ideas though :information_desk_person:
 
-Doxxy is a minimalistic tool that allows the markup to change without the event listeners being bound to either the markup or the global context.
+Doxxy is a minimalistic, dependency-free tool that allows the markup to change without the event listeners being bound to either the markup or the global context.
 
 This allows more flexibility between user-actions and page rerenders/reflows regardless whether the markup is rendered on the server or the client side.
 
@@ -32,29 +32,76 @@ Adding listeners with Doxxy:
 Script
 
 ```js
-doxy.action('click', e => alert('Hello world!'));
+dx.action('click', e => alert('Hello world!'));
 ```
 
-This way multiple UI control elements can be channelled through the sma event listener.
+This way multiple UI control elements can be channelled through the same event listener.
 
 Doxxy does not conflict with existing frameworks as it is using `data-event:[type]` attribute and does not rely on other dependencies or frameworks.
 
 > *Current development target:* latest browsers
 
-### Usage
+Usage
+---
 
-Subscribing to events is `on[type] => [type]`
-
-Markup
-
-```html
-<button data-event:click="click">Click me</button>
-```
-
-Script
+### Setup
 
 ```js
-import doxy from 'doxy';
+import doxxy from 'doxxy';
 
-doxy.action('click', e => alert(e.target.value));
+// initialise a Doxxy on a Node
+const dx = doxxy();
+```
+
+### Configuration
+
+By default doxxy automatically subscribes the proxy listener to **all** events that bubble up to the `document`` Node.
+
+You can subscribe to a custom Node with custom events
+
+```js
+const node = document.createElement('video'); // optional
+const events = [ 'canplay', 'timeupdate', 'ended' ]; // optional
+const vx = doxxy({ node, events });
+```
+
+### Adding user actions
+
+User actions can be either functions or objects grouping together user actions within the same topic
+
+User action as a `function`:
+
+```js
+dx.action('hello', e => alert("Hello World!"));
+```
+
+User actions as an `object`:
+
+```js
+const start = (e) => e.dataTransfer.setData('text/plain', 'hakuna matata');
+dx.action('drag', { start });
+```
+
+### Proxy/route events to user actions 
+
+Event declaration in the markup's data attribute.
+
+Concept: __Event__ (such as `click`) >> __User Action__ (any predefined user action)
+
+Example
+
+```html
+<button data-event:click="hello">Hello World!</button>
+```
+
+Or
+
+```html
+<div data-event:dragstart="drag.start" draggable="true"></div>
+```
+
+### Unbinding Doxxy
+
+```js
+dx.unbind();
 ```
