@@ -12,6 +12,10 @@
     "dev": "./node_modules/.bin/parcel serve ./index.html -d ./build/",
     "build": "./node_modules/.bin/parcel build ./lib/doxxy.js -d ./dist/"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/benqus/doxxy.git"
+  },
   "devDependencies": {
     "parcel": "^1.12.4"
   },
