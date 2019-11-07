@@ -1,6 +1,6 @@
 {
   "name": "doxxy",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "DOM event proxy",
   "author": {
     "name": "Bence Kormos",
@@ -9,6 +9,7 @@
   },
   "main": "./dist/index.js",
   "scripts": {
+    "test": "./node_modules/.bin/jest",
     "dev": "./node_modules/.bin/parcel serve ./index.html -d ./build/",
     "build": "./node_modules/.bin/parcel build ./lib/index.js -d ./dist/"
   },
@@ -17,6 +18,10 @@
     "url": "https://github.com/benqus/doxxy.git"
   },
   "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
+    "babel-jest": "^24.9.0",
+    "jest": "^24.9.0",
     "parcel": "^1.12.4"
   },
   "license": "MIT"

@@ -3,15 +3,13 @@ Doxxy
 
 DOM Event Proxy - channel all bubbling events via a proxy listener to controller methods.
 
-> **Note:** Work In Progress - feel free to suggest ideas though :information_desk_person:
-
 Doxxy is a minimalistic, dependency-free tool that allows the markup to change without the event listeners being bound to either the markup or the global context.
 
 This allows more flexibility between user-actions and page rerenders/reflows regardless whether the markup is rendered on the server or the client side.
 
 Consider this basic example:
 ```html
-// html - View
+<!-- html - View -->
 <button onclick="onclick">Click me!</button>
 ```
 

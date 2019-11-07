@@ -1,0 +1,11 @@
+.idea/
+.cache/
+
+node_modules/
+build/
+test/
+example/
+
+dist/index.js.map
+babel.config.js
+index.html
