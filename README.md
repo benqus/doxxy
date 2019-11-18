@@ -98,6 +98,21 @@ Or
 <div data-event:dragstart="drag.start" draggable="true"></div>
 ```
 
+### Adding parameters to user actions 
+
+In the attribute value: `[action]:[param]`
+
+```html
+<li data-event:click="showItem:0"></li>
+```
+
+Or use doxxy attribute generator
+
+```js
+const attr = dx.attribute('click', 'showItem', 0);
+const html = `<li ${attr}></li>`;
+```
+
 ### Unbinding Doxxy
 
 ```js

@@ -43,3 +43,7 @@ cx.action('jumpToRandomTime', (e) => {
 });
 
 node.play();
+
+const param = dx.attribute('click', 'action', 'param'); // data-event:click="action:param"
+console.log(param);
+

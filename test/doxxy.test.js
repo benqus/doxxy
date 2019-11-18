@@ -37,6 +37,12 @@ test('doxxy#action', () => {
     expect(actions.set).toHaveBeenCalledWith('a', a);
 });
 
+test('doxxy#attribute', () => {
+    const attribute = dx.attribute('a', 'b', 'c');
+
+    expect(attribute).toMatch('data-event:a="b:c"');
+});
+
 test('doxxy#unbind', () => {
     dx.unbind();
 
